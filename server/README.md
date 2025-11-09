@@ -23,7 +23,7 @@ sudo docker ps -a
 sudo docker logs <container_id>
 
 # 🧑‍💻 Access a running container's shell (useful for debugging)
-sudo docker exec -it <container_id> /bin/bash
+sudo docker exec -it <container_id> /bin/sh
 
 # 🛑 Stop a running container
 sudo docker stop <container_id>
