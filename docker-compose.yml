@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  server:
+    build: ./server
+    container_name: express-server
+    ports:
+      - "3300:3300"
+    networks:
+      - blank-net
+    restart: unless-stopped
+  client:
+    build: ./client
+    container_name: react-client
+    ports:
+      - "6173:6173"
+    networks:
+      - blank-net
+    depends_on:
+      - server
+    restart: unless-stopped
+
+networks:
+  blank-net:
+    driver: bridge
